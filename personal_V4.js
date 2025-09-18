@@ -19,7 +19,7 @@ const coloresMotivos = [
 
 // Establecer fecha de actualización
 document.getElementById('ultimaActualizacion').textContent = new Date().toLocaleDateString('es-ES');
-//Leer el archivo personal_v4.txt
+//Leer el archivo personal.txt
             fetch('personal.txt')
                 .then(response => response.text())
                 .then(data => {
