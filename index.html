@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausencias Dp. Serología</title>
+    <link rel="stylesheet" href="personal_V4.css">
+ </head>
+<body>
+    <div class="container">
+        <a id="top"></a>
+        <div class="header">
+            <h2>CONTROL AUSENCIA SEROLOGÍA (C.E.T.)</h2>
+            <p>v. 2025.1.0 - Creado por G.Moya</p>
+        </div>
+
+        <!-- <h2>Cargar y Filtrar Datos</h2>
+        <input type="file" id="fileInput" accept=".txt, .csv">
+        <h5>(Elegir el archivo 'personal.txt' que se encuentra en "P:/serologia/")</h5> -->
+        <div class="filtros">
+            <div class="filtro-item">
+                <label for="filtroNombre">Filtrar por nombre:</label>
+                <select id="filtroNombre">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+            <div class="filtro-item">
+                <label for="filtroAnio">Filtrar por año:</label>
+                <select id="filtroAnio">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#tablaAgrupadaContainer">Datos Agrupados</a>
+            <!-- <a href="#tablaResumenNombres">Resumen por Nombre</a> -->
+            <a href="#calendarioContainer">Calendario Visual</a>
+            <a href="#tablaContainer">Tabla Completa</a>
+        </div>
+
+        <h2>Datos Agrupados por Fecha y Motivo</h2>
+        <div class="tabla-cuadro">
+            <div id="tablaAgrupadaContainer" class="sin-seleccion">
+                <p>Seleccione un nombre y año para ver los datos agrupados.</p>
+            </div>
+        </div>
+<!--
+        <h2>Resumen de días por nombre</h2>
+        <div class="tabla-cuadro">
+            <div id="tablaResumenNombres" class="sin-seleccion">
+                <p>Seleccione un nombre y año para ver el resumen.</p>
+            </div>
+        </div>
+    -->
+        <h2>Calendario Visual de Ausencias</h2>
+        <div class="tabla-cuadro">
+            <div id="calendarioContainer" class="sin-seleccion">
+                <p>Seleccione un nombre y año para ver el calendario.</p>
+            </div>
+        </div>
+
+        <h2>Datos en Tabla</h2>
+        <div class="tabla-cuadro">
+            <div id="tablaContainer" class="sin-seleccion">
+                <p>Seleccione un nombre y año para ver los datos.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Última actualización: <span id="ultimaActualizacion"></span>
+        </div>
+    </div>
+
+    <script src="personal_V4.js"></script>
+</body>
+</html>
