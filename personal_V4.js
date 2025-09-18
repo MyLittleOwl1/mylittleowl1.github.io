@@ -31,25 +31,31 @@ document.getElementById('ultimaActualizacion').textContent = new Date().toLocale
                     console.error('Error al cargar el archivo:', error);
                 });
 
-async function procesarArchivo() {
-    const file = fileInput.files?.item(0);
-    if (!file) return;
 
+// Nueva función: procesa texto directamente
+function procesarArchivo(text) {
     try {
-        const text = await file.text();
-        
         // Procesa el contenido
         TRANSFORMADOS = parseAndTransform(text);
-        
         // Inicializar con todos los datos
         DATOS_FILTRADOS = [...TRANSFORMADOS];
-        
         // Actualizar interfaz
         actualizarFiltros();
         mostrarSinSeleccion(); // Mostrar vacío al inicio
-        
         console.log('Procesamiento completado:', TRANSFORMADOS.length, 'filas transformadas');
-        
+    } catch (err) {
+        console.error('Error al procesar archivo:', err);
+        alert('Error al procesar el archivo: ' + err.message);
+    }
+}
+
+// Si se usa input de archivo, esta función lo maneja
+async function procesarArchivoDesdeInput() {
+    const file = fileInput?.files?.item(0);
+    if (!file) return;
+    try {
+        const text = await file.text();
+        procesarArchivo(text);
     } catch (err) {
         console.error('Error al procesar archivo:', err);
         alert('Error al procesar el archivo: ' + err.message);
